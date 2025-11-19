@@ -11,12 +11,12 @@
         }
     },
     "variables":{
-        "myKeyVaultName": "[concat('jprbswakany', parameters('groupUniqueId'), '-kv02')]",
-        "myFunctionAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-fa02')]",
-        "myWebAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-wa02')]",
-        "myFunctionStorageName": "[concat('jprbswakany', parameters('groupUniqueId'), 'fs02')]",
-        "myAppServicePlanName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-asp02')]",
-        "myAddinStorageName": "[concat('jprbswakany', parameters('groupUniqueId'), 'as02')]",
+        "myKeyVaultName": "[concat('jprbswakany', parameters('groupUniqueId'), '-kv01')]",
+        "myFunctionAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-fa01')]",
+        "myWebAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-wa01')]",
+        "myFunctionStorageName": "[concat('jprbswakany', parameters('groupUniqueId'), 'fs')]",
+        "myAppServicePlanName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-asp01')]",
+        "myAddinStorageName": "[concat('jprbswakany', parameters('groupUniqueId'), 'as')]",
         "myAppInsightsName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-appi')]",
         "myActionGroupName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-rg-alert')]",
         "myLogAnalyticsWorkspaceName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-log')]"
