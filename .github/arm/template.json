@@ -11,7 +11,7 @@
         }
     },
     "variables":{
-        "myKeyVaultName": "[concat('jprbswakany', parameters('groupUniqueId'), '-kv01')]",
+        "myKeyVaultName": "[concat('jprbswakany', parameters('groupUniqueId'), '-kv1')]",
         "myFunctionAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-fa01')]",
         "myWebAppName": "[concat('jp-rbs-wak-any-', parameters('groupUniqueId'), '-wa01')]",
         "myFunctionStorageName": "[concat('jprbswakany', parameters('groupUniqueId'), 'fs')]",
