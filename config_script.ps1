@@ -29,8 +29,8 @@ $VNetIntegSubnetid=(az network vnet subnet show `
   --output tsv)
 $AppInsightsNm = "$ResourceBaseNmhyphen-appi"
 $LogAnalyticsNm = "$ResourceBaseNmhyphen-log"
-$KeyVaultCommonNm = "$ResourceDefaultNmhyphen-kv2"
-$KeyVaultNm = "jprbswakany${Id}-kv01"
+$KeyVaultCommonNm = "$ResourceDefaultNmhyphen-kv"
+$KeyVaultNm = "jprbswakany${Id}-kv1"
 $KeyVaultGraphSecret = "$ResourceBaseNmhyphen-GraphAPI"
 $KeyVaultGraphSecretValue = "null"
 $OperationUser = (az account show | convertfrom-json).user.name
