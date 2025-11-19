@@ -5,7 +5,7 @@ on:
     branches:
       - main
 env:
-  AZURE_SUBSCRIPTION_ID: 53fc43b0-4cd8-4746-ab22-c4c0b71a2eee   # set this to your Azure Subscription Id
+  AZURE_SUBSCRIPTION_ID: e8146c9f-1a22-4691-ad6e-8b27cbee144d   # set this to your Azure Subscription Id
   AZURE_RESOURCE_GROUP: jp.rbs.wak-any-001-rg   # set this to your target resource group
 
 jobs:
