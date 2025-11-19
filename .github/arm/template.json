@@ -6,7 +6,7 @@
             "type": "String"
         },
         "virtualNetworks_jp_rbs_wak_any_vnet_spoke_externalid": {
-            "defaultValue": "/subscriptions/53fc43b0-4cd8-4746-ab22-c4c0b71a2eee/resourceGroups/jp.rbs.wak-any-rg/providers/Microsoft.Network/virtualNetworks/jp.rbs.wak-any-vnet-spoke",
+            "defaultValue": "/subscriptions/e8146c9f-1a22-4691-ad6e-8b27cbee144d/resourceGroups/jp.rbs.wak-any-rg/providers/Microsoft.Network/virtualNetworks/jp.rbs.wak-any-vnet-spoke",
             "type": "String"
         }
     },
