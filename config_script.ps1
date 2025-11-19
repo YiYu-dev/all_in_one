@@ -1,18 +1,18 @@
 $location = "japan east"
 $SubscriptionId = (az account show | convertfrom-json).id
 $tenantId = (az account show | convertfrom-json).tenantid
-$Id = "010"
+$Id = "001"
 $ResourceDefaultNm = "jp.rbs.wak-any"
 $ResourceDefaultNmhyphen = "jp-rbs-wak-any"
 $ResourceBaseNm = "$ResourceDefaultNm-$Id"
 $ResourceBaseNmhyphen = "$ResourceDefaultNmhyphen-$Id"
 $RgNm = "$ResourceBaseNm-rg"
 $RgCommonNm = "$ResourceDefaultNm-rg"
-$FunctionSANm = "jprbswakany${Id}fs02"
-$PublicSANm = "jprbswakany${Id}as02"
+$FunctionSANm = "jprbswakany${Id}fs"
+$PublicSANm = "jprbswakany${Id}as"
 $PublicSAURL = "https://$PublicSANm.z11.web.core.windows.net"
-$SQLSrv = "$ResourceBaseNmhyphen-sql02"
-$SQLDb = "$ResourceBaseNmhyphen-sqldb02"
+$SQLSrv = "$ResourceBaseNmhyphen-sql01"
+$SQLDb = "$ResourceBaseNmhyphen-sqldb01"
 $SQLAdminGroup = "d9957e33-fe33-4cb3-adff-c55db4158bfc"
 $SysAdminObjId = "da7a8c9b-541a-47c1-963d-d912b3e790d6"
 $SQLConStringNm = "$ResourceDefaultNmhyphen-$id-SQLConnString"
@@ -30,20 +30,20 @@ $VNetIntegSubnetid=(az network vnet subnet show `
 $AppInsightsNm = "$ResourceBaseNmhyphen-appi"
 $LogAnalyticsNm = "$ResourceBaseNmhyphen-log"
 $KeyVaultCommonNm = "$ResourceDefaultNmhyphen-kv2"
-$KeyVaultNm = "jprbswakany${Id}-kv02"
+$KeyVaultNm = "jprbswakany${Id}-kv01"
 $KeyVaultGraphSecret = "$ResourceBaseNmhyphen-GraphAPI"
 $KeyVaultGraphSecretValue = "null"
 $OperationUser = (az account show | convertfrom-json).user.name
 $OperationUser
-$AppPlan = "$ResourceDefaultNmhyphen-$Id-asp02"
-$Wa = "$ResourceDefaultNmhyphen-$Id-wa02"
-$WaAR = "$ResourceDefaultNmhyphen-$Id-arwa02"
-$Fa = "$ResourceDefaultNmhyphen-$Id-fa02"
-$FaAR = "$ResourceDefaultNmhyphen-$Id-arfa02"
+$AppPlan = "$ResourceDefaultNmhyphen-$Id-asp01"
+$Wa = "$ResourceDefaultNmhyphen-$Id-wa01"
+$WaAR = "$ResourceDefaultNmhyphen-$Id-arwa01"
+$Fa = "$ResourceDefaultNmhyphen-$Id-fa01"
+$FaAR = "$ResourceDefaultNmhyphen-$Id-arfa01"
 $RaURL = "https://www.rbsdevtest2.com"
 $CustomerTenant = "97cd0e82-f22b-45c0-bd8e-47f2ce63d9a5"
 $CustomerAppId = "<顧客テナントに登録した AppId>"
-$RATenantId = "https://robinson2025b.onmicrosoft.com"
+$RATenantId = "https://robinson2015b.onmicrosoft.com"
 $appConfigName = "$ResourceDefaultNmhyphen-appConfig2"
 $N = 32; $Chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; $CsvSecret = -join ((1..$N) | % { Get-Random -InputObject $Chars.ToCharArray() })
 Write-Output "Generated Csv Secret: $CsvSecret"
@@ -66,14 +66,14 @@ $FaDiag = "$Fa-diag"
 $AppPlanDiag = "$AppPlan-diag"
 $KeyVaultNmDiag = "$KeyVaultNm-diag"
 $SQLDbDiag = "$SQLDb-diag"
-$omakase = "omakase-room@robinson2025b.onmicrosoft.com"
+$omakase = "omakase-room@robinson2015b.onmicrosoft.com"
 $FunctionSADiag = "$FunctionSANm-diag"
 $FunctionSAblobDiag = "$FunctionSANm-blob-diag"
 $FunctionSAqueueDiag = "$FunctionSANm-queue-diag"
 $FunctionSAtableDiag = "$FunctionSANm-table-diag"
 $FunctionSAfileDiag = "$FunctionSANm-file-diag"
-$omakase = "omakase-room@robinson2025b.onmicrosoft.com"
-$SystemUserId = "y.wakita@robinson2025b.onmicrosoft.com"
+$omakase = "omakase-room@robinson2015b.onmicrosoft.com"
+$SystemUserId = "y.wakita@robinson2015b.onmicrosoft.com"
 $result = az group show --name $RgNm
 ($result | convertfrom-json).properties
 $result = az monitor log-analytics workspace create `
@@ -429,7 +429,7 @@ az functionapp config appsettings set --name $Fa `
   --settings "AzureFunctionsJobHost__extensions__http__routePrefix=$Id/api/"
 az functionapp config appsettings set --name $Fa `
   --resource-group $RgNm `
-  --settings "AzureFunctionsJobHost__functionTimeout=02:00:00"
+  --settings "AzureFunctionsJobHost__functionTimeout=01:00:00"
 az functionapp config appsettings set --name $Fa `
   --resource-group $RgNm `
   --settings "BlobLocksContainerName=reservation-bloblocks"
@@ -557,7 +557,7 @@ az webapp auth microsoft update --name $Fa `
   --client-id $FaAppId `
   --client-secret "$FaAppSecret" `
   --issuer "https://login.microsoftonline.com/common/v2.0" `
-  --allowed-audiences "api://$FaAppId, https://ITKDEV2024RSV01.onmicrosoft.com/$FaAppId" `
+  --allowed-audiences "api://$FaAppId, https://ITKDEV2014RSV01.onmicrosoft.com/$FaAppId" `
   --yes
 az webapp auth update --name $Fa `
   --resource-group $RgNm `
@@ -606,7 +606,7 @@ az functionapp config appsettings set --name $Fa --slot stg `
   --settings "AzureFunctionsJobHost__extensions__http__routePrefix=$Id/api/"
 az functionapp config appsettings set --name $Fa --slot stg `
   --resource-group $RgNm `
-  --settings "AzureFunctionsJobHost__functionTimeout=02:00:00"
+  --settings "AzureFunctionsJobHost__functionTimeout=01:00:00"
 az functionapp config appsettings set --name $Fa --slot stg `
   --resource-group $RgNm `
   --slot-settings "AzureWebJobs.CheckConsistency.Disabled=1"
