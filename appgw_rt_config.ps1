@@ -1,8 +1,8 @@
 $location = "japan east"
 $SubscriptionId = (az account show | convertfrom-json).id
 $tenantId = (az account show | convertfrom-json).tenantId
-$Id = "010"
-$agwId = "02"
+$Id = "001"
+$agwId = "01"
 $ResourceDefaultNm = "jp.rbs.wak-any"
 $ResourceDefaultNmhyphen = "jp-rbs-wak-any"
 $ResourceBaseNm = "$ResourceDefaultNm-$Id"
@@ -13,7 +13,7 @@ $VNetNm = "$ResourceDefaultNm-vnet-spoke"
 $OperationUser = (az account show | convertfrom-json).user.name
 $KeyVaultCommonNm = "$ResourceDefaultNmhyphen-kv2"
 $agwNm = "$ResourceDefaultNm-agw$agwId"
-$agwWafpolicy = "$ResourceDefaultNm-wafpolicy02"
+$agwWafpolicy = "$ResourceDefaultNm-wafpolicy01"
 $agwbackendpooldefault = "$ResourceDefaultNm-default-backend"
 $agwbackendpoolwa = "$ResourceDefaultNm-$Id-wa-backend"
 $agwbackendpoolfa = "$ResourceDefaultNm-$Id-fa-backend"
@@ -40,15 +40,15 @@ $agwpip = "$ResourceDefaultNm-agw$agwId-pip"
 $agwIPConfig = "appGatewayIpConfig-$agwId"
 $agwFIPConfig = "appGwPublicFrontendIpIPv4-$agwId"
 $agwcertname = (az keyvault certificate list --vault-name $KeyVaultCommonNm |ConvertFrom-Json).name
-$Wa = "$ResourceDefaultNmhyphen-$Id-wa02"
-$Fa = "$ResourceDefaultNmhyphen-$Id-fa02"
+$Wa = "$ResourceDefaultNmhyphen-$Id-wa01"
+$Fa = "$ResourceDefaultNmhyphen-$Id-fa01"
 $WaDiag = "$Wa-diag"
 $FaDiag = "$Fa-diag"
-$AppPlan = "$ResourceDefaultNmhyphen-$Id-asp02"
-$KeyVaultNm = "jprbswakany${Id}-kv02"
-$SQLSrv = "$ResourceBaseNmhyphen-sql02"
-$SQLDb = "$ResourceBaseNmhyphen-sqldb02"
-$FunctionSANm = "jprbswakany${Id}fs02"
+$AppPlan = "$ResourceDefaultNmhyphen-$Id-asp01"
+$KeyVaultNm = "jprbswakany${Id}-kv01"
+$SQLSrv = "$ResourceBaseNmhyphen-sql01"
+$SQLDb = "$ResourceBaseNmhyphen-sqldb01"
+$FunctionSANm = "jprbswakany${Id}fs"
 $AppPlanDiag = "$AppPlan-diag"
 $KeyVaultNmDiag = "$KeyVaultNm-diag"
 $SQLDbDiag = "$SQLDb-diag"
@@ -178,7 +178,7 @@ $WaPep = az network private-endpoint show `
 $WaPrivateIp = $WaPep.customDnsConfigs[0].ipAddresses[0]
 az network route-table route create `
 --address-prefix $WaPrivateIp/32 `
---name "$ResourceDefaultNm-rt-to-$Id-wa02" `
+--name "$ResourceDefaultNm-rt-to-$Id-wa01" `
 --next-hop-ip-address 192.168.100.4 `
 --next-hop-type VirtualAppliance `
 --resource-group $RgCommonNm `
@@ -189,7 +189,7 @@ $FaPep = az network private-endpoint show `
 $FaPrivateIp = $FaPep.customDnsConfigs[0].ipAddresses[0]
 az network route-table route create `
 --address-prefix $FaPrivateIp/32 `
---name "$ResourceDefaultNm-rt-to-$Id-fa02" `
+--name "$ResourceDefaultNm-rt-to-$Id-fa01" `
 --next-hop-ip-address 192.168.100.4 `
 --next-hop-type VirtualAppliance `
 --resource-group $RgCommonNm `
