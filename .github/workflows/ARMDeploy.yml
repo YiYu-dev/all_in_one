@@ -5,7 +5,7 @@ on:
 
 env:
   AZURE_SUBSCRIPTION_ID: e8146c9f-1a22-4691-ad6e-8b27cbee144d   # set this to your Azure Subscription Id
-  AZURE_RESOURCE_GROUP: jp.rbs.wak-any-001-rg   # set this to your target resource group
+  AZURE_RESOURCE_GROUP: jp.rbs.wak-any-002-rg   # set this to your target resource group
 
 jobs:
   deploy-virtual-network-template:
