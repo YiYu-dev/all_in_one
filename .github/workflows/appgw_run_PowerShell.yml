@@ -1,4 +1,4 @@
-name: Run PowerShell Script
+name: Run PowerShell Script for Common Resources
 
 on:
   workflow_dispatch:
